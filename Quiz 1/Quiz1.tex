@@ -1,0 +1,51 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Quiz 1}
+\author{Allen Williams }
+\date{January 24th, 2018}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{scrextend}
+\newtheorem*{Theorem}{Theorem}
+\newtheorem*{Axiom}{Axiom}
+\newtheorem{Problem}{Problem}
+\renewcommand\qedsymbol{QED}
+
+\binoppenalty=\maxdimen
+\relpenalty=\maxdimen
+
+\begin{document}
+\maketitle
+
+\begin{Problem}
+ i) Let $x,y\in\mathbb{R}$, $(x,y)\in R$ iff $x\leq y$ is not an equivalence relation on $\mathbb{R}$ since it fails to be symmetric.  Consider $(x,y)=(0,3)$.  $(0,3)\in R$ since $0\leq3$ but $(3,0)\not\in R$ since $3>0$.\\\\
+ii) Let $x,y\in\mathbb{R}$, $(x,y)\in R$ iff $\lvert x\rvert=\lvert y\rvert$ is an equivalence relation on $\mathbb{R}$.  For all $x\in\mathbb{R}$, $(x,x)\in R$ since $\lvert x\rvert=\lvert x\rvert$ so $R$ is reflexive.  Suppose $(x,y)\in R$ then $\lvert x\rvert = \lvert y\rvert$ and since "$=$" is symmetric $\lvert y\rvert=\lvert x\rvert$ meaning $(y,x)\in R$ so R is symmetric.  Now suppose $(x,y)\in R $ and $(y,z)\in R$ so $\lvert x\rvert =\lvert y\rvert$ and $\lvert y\rvert=\lvert z\rvert$, by transitivity of equality $\lvert x\rvert=\lvert z\rvert$ so $(x,z)\in R$ so $R$ is transitive.  Since $R$ is reflexive, symmetric, and transitive $R$ is an equivalence relation on $\mathbb{R}$.  The partition of $\mathbb{R}$ given by $R$ is $\{x,-x\mid x\in\mathbb{R}\}$. \\\\
+iii) Let $x,y\in\mathbb{Z}$.  $(x,y)\in R$ iff $x\equiv y$ $(mod\text{ }5)$ is an equivalence relation on $\mathbb{Z}$.  By definition if $x\equiv y$ $(mod\text{ }5)$ then $x-y=5k$ for some $k\in\mathbb{Z}$.  Let $x,y,z\in\mathbb{Z}$ be arbitrary.  $x-x=0=5\cdot0$ so $x\equiv x\text{ }(mod\text{ }5)$ so $(x,x)\in R$ and R is reflexive.  Suppose $(x,y)\in\mathbb{R}$ then $x\equiv y\text{ }(mod\text{ }5)$ so $x-y=5k$ for some $k\in\mathbb{Z}$, then $y-x=5(-k)$ and since $k\in\mathbb{Z}$, $-k\in\mathbb{Z}$ so $y\equiv x\text{ }(mod\text{ }5)$ so $(y,x)\in R$ and $R$ is symmetric.  Now suppose $(x,y)\in R$ and $(y,z)\in R$, so $x\equiv y\text{ }(mod\text{ }5)$ and $y\equiv z\text{ }(mod\text{ }5)$.  Then $x-y=5k_1$ for some $k_1\in\mathbb{Z}$ and $y-z=5k_2$ for some $k_2\in\mathbb{Z}$.  Then by adding these equations, $x-y+y-z=5k_1+5k_2$, or $x-z=5(k_1+k_2)$.  Since $k_1\in\mathbb{Z}$ and $k_2\in\mathbb{Z}$, $k_1+k_2\in\mathbb{Z}$ so $x\equiv z\text{ }(mod\text{ }5)$, $(x,z)\in R$, and $R$ is transitive.  Since $R$ is reflexive, symmetric, and transitive, $R$ is an equivalence relation on $\mathbb{Z}$.  The partition of $\mathbb{Z}$ given by $R$ is $\{\{5k\mid k\in\mathbb{Z}\},\{5k+1\mid k\in\mathbb{Z}\},\{5k+2\mid k\in\mathbb{Z}\},\{5k+3\mid k\in\mathbb{Z}\},\{5k+4\mid k\in\mathbb{Z}\}\}$
+\end{Problem}
+
+\begin{Problem}
+ Let $(a_n)_{n=1}^\infty$, $(b_n)_{n=1}^\infty\in S$ where $S$ is the set of all real valued sequences.  "$((a_n)_{n=1}^\infty,(b_n)_{n=1}^\infty) \in R$ iff $\lim_{n\to\infty}(a_n-b_n)=0$" is an equivalence relation on $S$.  Let $(a_n)_{n=1}^\infty,(b_n)_{n=1}^\infty,(c_n)_{n=1}^\infty$ be arbitrary.  To see that $R$ is reflexive, let $\varepsilon>0$, clearly $\lvert a_n-a_n-0\rvert=0<\varepsilon$ for any value of n, so $\lim_{n\to\infty}(a_n-a_n)=0$ meaning $((a_n)_{n=1}^\infty,(a_n)_{n=1}^\infty)\in R$ so $R$ is reflexive.  To see that $R$ is symmetric, suppose $\lim_{n\to\infty}(a_n-b_n)=0$ and let $\varepsilon>0$.  Then there exists an $N\in\mathbb{N}$ such that $n>N$ implies $\lvert a_n-b_n-0\rvert<\epsilon$, or $\lvert a_n-b_n\rvert<\varepsilon$.  Then for $n>N$, $\lvert -(a_n-b_n)\rvert=\lvert b_n-a_n\rvert<\varepsilon$, so $\lim_{n\to\infty}(b_n-a_n)=0$, so $((b_n)_{n=1}^\infty,(a_n)_{n=1}^\infty)\in R$ so $R$ is symmetric.  To see that $R$ is transitive, suppose $\lim_{n\to\infty}(a_n-b_n)=0$ and $\lim_{n\to\infty}(b_n-c_n)=0$ and let $\varepsilon>0$.  Then there exists an $N_1\in\mathbb{N}$ such that for $n>N_1$, $\lvert a_n-b_n\rvert<\frac{\varepsilon}{2}$.  Also there exists an $N_2\in\mathbb{N}$ such that for $n>N_2$, $\lvert b_n-c_n\rvert<\frac{\varepsilon}{2}$.  Then for $n>\max\{N_1,N_2\}$, $\lvert a_n-b_n+b_n-c_n\rvert\leq\lvert a_n-b_n\rvert+\lvert b_n-c_n\rvert<\varepsilon$, so $\lvert a_n-c_n\rvert<\varepsilon$ meaning $\lim_{n\to\infty}(a_n-c_n)=0$ so $((a_n)_{n=1}^\infty,(c_n)_{n=1}^\infty)\in R$ so $R$ is transitive.  Since $R$ is reflexive, symmetric, and transitive, $R$ is an equivalence relation on $S$.
+\end{Problem}
+
+\begin{Problem}
+Let $A,B\in\mathcal{P}(X)$ where $X=\{1,2,3...100\}$.  "$(A,B)\in R$ iff $A\subseteq B$" is not an equivalence relation on $\mathcal{P}(X)$ since it fails to be symmetric.  Consider $(A,B)=(\{\},\{1,2,3\})$.  $(A,B)\in R$ since $\{\}\subseteq \{1,2,3\}$ but $(B,A)\notin R$ since $\{1,2,3\}$ is not a subset of $\{\}$.
+\end{Problem}
+
+\begin{Problem}
+\renewcommand{\labelenumii}{\roman{enumii}}
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item is a partial order relation.  Let $x,y,z\in\mathbb{R}$ be arbitrary.  Since $x=x$, it is also true that $x\leq x$, so $R$ is reflexive.  Suppose $(x,y)\in R$ and $(y,x)\in R$ then $x\leq y$ and $y\leq x$ so $x=y$, meaning $R$ is anti-symmetric.  Now suppose $(x,y)\in R$ and $(y,z)\in R$, then $x\leq y$ and $y\leq z$ so by transitivity of $\leq$, $x\leq z$ so $R$ is transitive.  Since $R$ is reflexive, anti-symmetric, and transitive $R$ is a partial order relation on $\mathbb{R}$.
+        \item is not a partial order relation on $\mathbb{R}$ since it fails to be anti-symmetric.  Consider $(x,y)=(-2,2)$.  Then $(x,y)\in R$ since $\lvert -2\rvert=\lvert 2\rvert$ and $(y,x)\in R$ by the symmetry of $R$ but $-2\neq2$.
+        \item is not a partial order relation on $\mathbb{Z}$ since it fails to be anti-symmetric.  Consider $(x,y)=(1,6)$.  Then $(x,y)\in R$ since $1\equiv 6\text{ }(mod\text{ }5)$ and $(y,x)\in R$ by the symmetry of $R$, but $1\neq 6$.
+    \end{enumerate}
+    \item is not a partial order on the set of all real valued sequences since it fails to be anti-symmetric.  Let $(a_n)_{n=1}^\infty$ be the sequence given by $a_n=\frac{1}{n}$ and let $(b_n)_{n=1}^\infty$ be the sequence given by $b_n=\frac{1}{n^2}$.  To see that both $((a_n)_{n=1}^\infty,(b_n)_{n=1}^\infty)$ and $((b_n)_{n=1}^\infty,(a_n)_{n=1}^\infty)$ are elements of $R$ recall that R is symmetric so it is enough to show that $((a_n)_{n=1}^\infty,(b_n)_{n=1}^\infty)\in R$.  Fix $\varepsilon>0$ and let $N=\frac{1}{\varepsilon}$, then $n>N$ means $n>\frac{1}{\varepsilon}$, so $\frac{1}{n}=\frac{n}{n^2}<\varepsilon$.  Further, $\frac{n-1}{n^2}<\frac{n}{n^2}<\varepsilon$.  Since $n\in\mathbb{N}$ this means $\lvert\frac{n-1}{n^2}\rvert<\varepsilon$, or or $\lvert(\frac{1}{n}-\frac{1}{n^2})-0\rvert<\varepsilon$ so $\lim_{n\to\infty}(\frac{1}{n}-\frac{1}{n^2})=0$ meaning $((a_n)_{n=1}^\infty,(b_n)_{n=1}^\infty)\in R$.  Two sequences $(a_n)_{n=1}^\infty$ and $(b_n)_{n=1}^\infty$ are equal if for all $n\in\mathbb{N}$ $a_n=b_n$, but for the sequences defined above, $a_4=\frac{1}{4}$ and $b_4=\frac{1}{16}$ so $(a_n)_{n=1}^\infty\neq(b_n)_{n=1}^\infty$, so $R$ is not anti-symmetric so it cannot be a partial order relation on the set of all real valued sequences.
+    \item is a partial order relation on $\mathcal{P}(X)$.  Let $A,B,C\in\mathcal{P}(X)$ be arbitrary.  $(A,A)\in R$ means $A\subseteq A$ and since every set is a subset of itself, clearly $R$ is reflexive.  Suppose $(A,B)\in R$ and $(B,A)\in R$ then $A\subseteq B$ and $B\subseteq A$ so $A=B$, so $R$ is anti-symmetric.  To see that $R$ is transitive suppose $(A,B)\in R$ and $(B,C)\in R$ then $A\subseteq B$ and $B\subseteq C$.  Let $a\in A$ be arbitrary.  Since $A\subseteq B$ then $a\in B$, and since $a\in B$ and $B\subseteq C$, $a\in C$ so $A\subseteq C$ demonstrating that $R$ is transitive.  Since $R$ is reflexive, anti-symmetric, and transitive $R$ is a partial order relation on $\mathcal{P}(X)$.
+\end{enumerate}
+\end{Problem}
+
+\end{document}

@@ -1,0 +1,99 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Quiz 2}
+\author{Allen Williams }
+\date{February 7th, 2018}
+
+\usepackage{dcolumn}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{scrextend}
+\newtheorem*{Theorem}{Theorem}
+\newtheorem*{Axiom}{Axiom}
+\newtheorem{Problem}{Problem}
+\renewcommand\qedsymbol{QED}
+
+\binoppenalty=\maxdimen
+\relpenalty=\maxdimen
+
+\begin{document}
+\maketitle
+
+\begin{Problem}
+Prove that the set of matrices of the form $M=
+\left[ \begin{array}{ccc}
+1 & x & y \\
+0 & 1 & z \\
+0 & 0 & 1
+\end{array} \right]$ is a group under matrix multiplication where $x,y,z\in\mathbb{Z}$. First notice that matrices in ths set have determinant 1 since they are upper triangular with 1s on the main diagonal, so this set is a subset of the group $SL_3(\mathbb{R})$.  By letting $x=y=z=0$ we get $I_3$ the identity in $SL_3(\mathbb{R})$. Let $M_1=
+\left[ \begin{array}{ccc}
+1 & x_1 & y_1 \\
+0 & 1 & z_1 \\
+0 & 0 & 1
+\end{array} \right]$ and $M_2=
+\left[ \begin{array}{ccc}
+1 & x_2 & y_2 \\
+0 & 1 & z_2 \\
+0 & 0 & 1
+\end{array} \right]$.  Then $M_1M_2=\left[ M_1\left[\begin{array}{c} 1 \\ 0 \\ 0 \end{array} \right], M_1\left[\begin{array}{c} x_2 \\ 1 \\ 0 \end{array} \right], M_1\left[\begin{array}{c} y_2 \\ z_2 \\ 1 \end{array} \right] \right]\\=
+\left[ \begin{array}{ccc}
+1 & x_2+x_1 & y_2+x_1z_2+y_1 \\
+0 & 1 & z_2+z_1 \\
+0 & 0 & 1
+\end{array} \right]$. Since all entries of $M_1$ and $M_2$ are integers, the entries in $M_1M_2$ are also integers, so this set of matrices is closed under multiplication.  Let $M_1$ be an element of this set of matrices, then $M_1M_1'= \\ \left[ \begin{array}{ccc} 1 & x+x' & y+xz'+y' \\ 0 & 1 & z+z' \\ 0 & 0 & 1 \end{array} \right]$.  If $x+x'=0$, $y+xz'+y'=0$, and $z+z'=0$ then $M'=M^{-1}$, so by solving these equations simultaneously, a formula for $M^{-1}$ is obtained in terms of the entries of $M$.  From equations 1 and 3, $x'=-x$ and $z'=-z$, and by substituting these values into equation 2, $y'=-y+xz$  Then $M^{-1}=\left[ \begin{array}{ccc} 1 & -x & -y+xz \\ 0 & 1 & -z \\ 0 & 0 & 1 \end{array} \right]$ and since $x,y,z\in\mathbb{Z}$, the entries of $M^{-1}$ are integers, so this set of matrices is closed under inverses.  So this group of matrices is a subgroup of $SL_3(\mathbb{R})$ and is therefore itself a group.
+\end{Problem}
+\pagebreak
+\begin{Problem}
+Give a multiplication table for the group $U(10)$.  \\
+\begin{center} $\begin{tabular}{c|c|c|c|c|}
+     \cdot & [1] & [3] & [7] & [9] \\ \hline
+     [1] & [1] & [3] & [7] & [9]   \\ \hline
+     [3] & [3] & [9] & [1] & [7]   \\ \hline
+     [7] & [7] & [1] & [9] & [3]   \\ \hline
+     [9] & [9] & [7] & [3] & [1]  
+\end{tabular}$ \end{center} 
+\end{Problem}
+\begin{Problem}
+Show that if $a^2=e$ for all elements n a group $G,$ then $G$ must be abelian. \\
+Let $G$ be a group and let $a^2=e$ for all $a\in G$. Let $a,b\in G$ be arbitrary.  Then $ab=c$ for some $c\in G$. \begin{align*}
+ab&=c \\
+a(ab)&=ac \\
+(aa)b&=ac \\
+eb&=ac \\
+b&=ac \\
+bc&=(ac)c \\
+bc&=a(cc) \\
+bc&=ae \\
+bc&=a \\
+b(bc_&=ba \\
+(bb)c&=ba \\
+ec&=ba \\
+c&=ba
+\end{align*}
+So $ab=c=ba$ and since $a$ and $b$ were arbitrary $G$ is an abelian group.
+\end{Problem}
+\begin{Problem}
+Let $H$ and $K$ be two subgroups of a group $<G,\circ>$.  Prove that $H\cap K$ is a subgroup of $G$.  Let $H$ and $K$ be subgroups of the group $<G,\circ>$.  Clearly $H\cap K$ is a subset of $G$ since $H$ and $K$ are subgroups of $G$.  Let $a,b\in H\cap K$ be arbitrary.  Since $b\in H$ and $<H,\circ>$ is a group, $b^{-1}\in H$.  Similarly $b^{-1}\in K$, so $b^{-1}\in H\cap K$.  Consider $a\circ b$.  Since $a\in H$ and $b\in H$, $a\circ b\in H$.  Similarly $a\circ b\in K$.  Since $a\circ b\in H$ and $a\circ b\in K$, $a\circ b\in H\cap K$.  Since $a$ and $b$ were arbitrary, $H\cap K$ is a subgroup of $G$.
+\end{Problem}
+\begin{Problem}
+Let $<\mathbb{Z},+>$ be the additive group of integers.  Consider $H=<4\mathbb{Z},+>$, $K=<9\mathbb{Z},+>$, and $L=<6\mathbb{Z},+>$, three subgroups of $<\mathbb{Z},+>$ where $4\mathbb{Z}=\{4n\mid n\in\mathbb{Z}\}$, $9\mathbb{Z}=\{9n\mid n\in\mathbb{Z}\}$, $6\mathbb{Z}=\{6n\mid n\in\mathbb{Z}\}$.  None of $H\cup K$, $K\cup L$, or $L\cup H$ are subgroups of $\mathbb{Z}$.  To see that $H\cup K$ is not a group consider $4\in H$ and $9\in K$.  $9+4=13$ which is not an element of $H$ or $K$ so $H\cup K$ is not closed under addition.  Similarly $K\cup L$ and $L\cup H$ are not closed under addition and are not subgroups of $\mathbb{Z}$.  If $H=2\mathbb{Z}$ and $K=4\mathbb{Z}$ then $H\cup K$ is a subgroup of $\mathbb{Z}$.  $0=2(0)=4(0)$ so both $H$ and $K$ contain the identity.  Consider $a\in H$ and $b\in K$ then $a=2k$ for some $k\in \mathbb{Z}$ and $b=4j$ for some $j\in\mathbb{Z}$.  Then $a+b=2k+4j=2(k+2j)$ so $a+b\in H$ and therefore $a+b\in H\cup K$.  Also if $a\in H$ then $a=2k$ for some $k\in\mathbb{Z}$.  Since $a+a^{-1}=0$, $a^{-1}=-2k=2(-k)$ so $a^{-1}\in H$ and therefore $a^{-1}\in H\cup K$.  
+\end{Problem}
+\begin{Problem}
+Show that $G=\{1,-1,i,-i\}$ form a group with respect to multiplication.  Write the binary composition table.  Find a nontrivial proper subgroup. \\
+Let $G=\{1,-1,i,-i\}$, then $G$ forms a group with respect to multiplication since its multiplication table is as follows, \begin{center} $\begin{tabular}{c|c|c|c|c|}
+* & 1 & -1 & i & -i \\ \hline
+1 & 1 & -1 & i & -1 \\ \hline
+-1 & -1 & 1 & -i & i \\ \hline
+i & i & -i & -1 & 1 \\ \hline
+-i & -i & i & 1 & -1 \end{tabular}$ \end{center}
+and $G\subseteq \mathbb{C}$ so $G$ inherits associativity from $<\mathbb{C}, *>$  As seen on the multiplication table $1$ is the identity element for $G$ and since $1=1^{-1},-1=(-1)^{-1},-i=i^{-1},$ and $i=(-i)^{-1}$, every element has an inverse in $G$.  The set is also closed under multiplication so it forms a group.  \\
+Consider $H=\{1,-1\}$.  Clearly $H\subset G$ and its multiplication table is as follows,
+\begin{center} $\begin{tabular}{c|c|c|}
+* & 1 & -1 \\ \hline
+1 & 1 & -1 \\ \hline
+-1 & -1 & 1 \end{tabular}$ \end{center}
+$H$ contains only two elements $1$ and $-1$, so $H$ is non-empty.  Both $1$ and $-1$ are self inverses in H so $g^{-1}\in H$ whenever $g\in H$, and $H$ is closed under multiplication, so $H$ forms a proper, nontrivial subgroup of $G$.
+\end{Problem}
+\end{document}
