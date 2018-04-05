@@ -1,0 +1,87 @@
+\documentclass{amsart}
+\usepackage[utf8]{inputenc}
+
+\title{Quiz 7}
+\author{Allen Williams }
+\date{\today}
+
+\usepackage{booktabs}
+\usepackage{dcolumn}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{scrextend}
+\newtheorem*{Theorem}{Theorem}
+\newtheorem*{Axiom}{Axiom}
+\newtheorem{Problem}{Problem}
+\renewcommand\qedsymbol{QED}
+
+\makeatletter
+\newcommand{\thickhline}{%
+    \noalign {\ifnum 0=`}\fi \hrule height 1pt
+    \futurelet \reserved@a \@xhline
+}
+\newcolumntype{"}{@{\hskip\tabcolsep\vrule width 1pt\hskip\tabcolsep}}
+\makeatother
+
+
+%\binoppenalty=\maxdimen
+%\relpenalty=\maxdimen
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item 
+    Are the following functions homomorphisms?  If so give the kernel.\begin{enumerate}
+              \item $\phi:\mathbb{R}^*\to GL_2(\mathbb{R})$ defined by $\phi(a)=\left(\begin{array}{cc} 1 & 0 \\ 0 & a \end{array} \right)$ is a homomorphism and $ker(\phi)=\{1\}.$
+              \item $\phi:\mathbb{R}\to GL_2(\mathbb{R})$ defined by $\phi(a)=\left( \begin{array}{cc} 1 & 0 \\ a & 1 \end{array} \right)$ is a homomorphism with $ker(\phi)=\{0\}$.
+              \item $\phi:GL_2(\mathbb{R})\to \mathbb{R}$ defined by $\phi\left(\left( \begin{array}{cc} a & b \\ c & d \end{array}\right)\right)$=$a+d$ is not a homomorphism.
+              \item $\phi:GL_2(\mathbb{R})\to \mathbb{R}^*$ defined by $\phi\left(\left( \begin{array}{cc} a & b \\ c & d \end{array}\right)\right)=ad-bc$ is a homomorphism with $ker(\phi)=SL_2(\mathbb{R})$
+              \item $\phi:\mathbb{M}_2(\mathbb{R})\to \mathbb{R}$ defined by $\phi\left(\left( \begin{array}{cc} a & b \\ c & d \end{array}\right)\right)=b$ is a homomorphism with $ker(\phi)=\left\{\left(\begin{array}{cc} a & 0 \\ b & c \end{array}\right)\mid a,b,c\in\mathbb{R}\right\}$.
+          \end{enumerate}
+    \item Let $\phi:\mathbb{Z}\to \mathbb{Z}$ be given by $\phi(n)=7n$.  Prove the $\phi$ is a group homomorphism.  Find the kernel and the image of $\phi$. $\phi(m+n)=7(m+n)=7m+7n=\phi(m)+\phi(n)$ so $\phi$ is a homomorphism.  $ker(\phi)=\{n \mid \phi(n)=0\}$ or the solution set to the equation $7n=0$, so $ker(\phi)=\{0\}$. The image of $\phi$ is $\phi(\mathbb{Z})$ or $\{7z\mid z\in \mathbb{Z}\}$, or $7\mathbb{Z}$.
+    \item In $\mathbb{Z}_{40}$ let $H=\langle 4 \rangle$ and let $N=\langle 10 \rangle$.
+        \begin{enumerate}
+            \item
+            List the elements in $H+N$ and $H\cap N$ \\
+            $H+N=\{0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38\}$
+            $H\cap N=\{0,20\}$
+            \item
+            list the cosets in $\frac{HN}{N}$ \\
+            $\frac{H+N}{N}=\{\{0,10,20,30\}N=\{0,10,20,30\}, \\ \{2,12,22,32\}N= \{2,12,22,32\}, \\ \{4,14,24,34\}N=\{4,14,24,34\}, \\ \{6,16,26,36\}N=\{6,16,26,36\}, \\ \{8,18,28,38\}N=\{8,18,28,38\}\}$ \\
+            \item 
+            List the cosets in $\frac{H}{H\cap N}$
+            $\frac{H}{H\cap N}=\{0(H\cap N)=\{0,20\}, 
+            4(H\cap N)=\{4,24\}, 8(H\cap N)=\{8,28\}, 12(H\cap N)=\{12,32\}, 16(H\cap N)=\{16,36\}\}$
+        \item Give the correspondence between $\frac{H+N}{N}$ and $\frac{H}{H\cap N}$. Define $\varphi:\frac{H}{H\cap N}\to \frac{H+N}{N}$ by $\varphi(g(H\cap N))=gN$  Suppose $\varphi(g(H\cap N))=\varphi(h(H\cap N))$ Observe that $gN=g'N$ when $g\equiv g' \mod(10)$, so $g\equiv h\mod(10)$.  Also notice that $g(H\cap N)=g'(H\cap N)$ whenever $g\equiv g'\mod(10)$ so $g(H\cap N)=h(H\cap N)$, so $\varphi$ is injective. Let $gN$ be arbitrary, then $gN=\varphi(g(H\cap N))$ so $\varphi$ is surjective.  Also $\varphi(g(H\cap N)h(H\cap N))=\varphi(gh(H\cap N))=ghN=gNhN=\varphi(g(H\cap N))\varphi(h(H\cap N))$ so $\varphi$ is an isomorphism meaning $\frac{H}{H\cap N}\cong \frac{H+N}{N}$.
+        \end{enumerate}
+    
+    \item If $\phi :G\to H$ is a group homomorphism and $G$ is abelian, prove that $\phi(G)$ is also abelian. Let $\phi:G\to H$ be a homomorphism and let $G$ be an abelian group.  Let $a,b\in G$ then $ab=ba$ so $\phi(ab)=\phi(a)\phi(b)=\phi(ba)=\phi(b)\phi(a)$ so since $\phi(a)\phi(b)=\phi(b)\phi(a)$, $\phi(G)$ is abelian.
+
+  If $\phi: G\to H$ is a group homomorphism and $G$ is cyclic, prove that $\phi(G)$ is also cyclic. Let $G$ be a cyclic group and let $\phi:G\to H$ be a homomorphism then $G=\langle g \rangle$ for some element $g\in G$, and an arbitrary element in $G$ can be written $g^k$ for integer $k$.  Then $\phi(g^k)=\phi(g)^k$.  The proof of which is by induction.  Clearly when $k=1$ $\phi(g^1)=\phi(g)^1$ establishing the basis of induction.  Now assume $\phi(g^k)=\phi(g)^k$ for arbitrary $k\in\mathbb{Z}$.  Then $$\phi(g^k)\phi(g)=\phi(g)^k\phi(g) \\ \phi(g^{k+1}=\phi(g)^{k+1}$$ \\
+    So by induction $\phi(g^k)=\phi(g)^k$ for all $k\in\mathbb{N}$, so $\phi(G)$ is cyclic.
+    \item Let $G$ be a group with $N$ a normal subgroup and both $N$ and $\frac{G}{N}$ are abelian. Does this imply that $G$ is abelian? No. Consider $G=S_3$ and $N=A_3$.  $A_3$ is cyclic and therefore abelian since $\lvert A_3 \rvert=3$ and $3$ is prime.  Also $\lvert \frac{G}{N} \rvert=\frac{\lvert G \rvert }{\lvert N \rvert }=\frac{6}{3}=2$ which is prime so $\frac{G}{N}$ is cyclic and therefore abelian.  But $G=S_3$ is not abelian since $(12)(13)=(132)\neq(123)=(13)(12)$.
+    \item Let $G$ be a group with $N$ a normal subgroup and both $N$ and $\frac{G}{N}$ are cyclic. Does this imply that $G$ is cyclic? Again, no. The response to question 5 holds for question 6 as well as groups with prime order are cyclic and therefore abelian.
+    \item Let $\phi:G\to H$ be a homomorphism.  Define a relation $~$ on $G$ by $a~b$ if $\phi(a)=\phi(b)$.  Let $a,b,c\in G$ be arbitrary.  Clearly $\phi(a)=\phi(a)$ since $\phi$ is a function, so $~$ is reflexive.  Suppose $a~b$, that is $\phi(a)=\phi(b)$ then by the symmetric property of equality $\phi(b)=\phi(a)$, so $b~a$, so $\phi$ is symmetric.  Now suppose $a~b$ and $b~c$, that is $\phi(a)=\phi(b)$ and $\phi(b)=\phi(c)$, then by the transitive property of equality $\phi(a)=\phi(c)$ so $\phi$ is transitive, and therefore an equivalence relation on $G$.  The equivalence classes are sets of elements of $G$ that map to the same element in $H$ under $\phi$.
+    \item Let $G$ be a group and define $\phi:G\to Aut(G)$ by $g\mapsto i_g$.  Then $\phi(gh)=i_{gh}=ghxh^{-1}g^{-1}=i_g(hxh^{-1})=i_gi_h(x)=\phi(g)\phi(h)$ so $\phi$ is a homomorphism.  $i_g(x)=gxg^{-1}$ so $\phi(G)=inn(G)$.  $ker(\phi)=\{g\in G\mid \phi(g)=e_{Aut(G)}\}$ and $e_{Aut(G)}=\epsilon$ where $\epsilon(x)=x$, then $g$ must commute with an arbitrary element of $G$ so $g\in Z(G)$, so $ker(\phi)=Z(G)$.  By the first isomorphism theorem $\frac{G}{Z(G)}\cong Inn(G)$.
+    \item \begin{tabular}{c"cccc}
+    $\circ$ & $1\cdot\langle 7 \rangle$ & $3\cdot\langle 7 \rangle$ & $9\cdot\langle 7 \rangle$ & $11\cdot\langle 7 \rangle$ \\\thickhline
+    $1\cdot\langle 7 \rangle$ & $1\cdot\langle 7 \rangle$ & $3\cdot\langle 7 \rangle$ & $9\cdot\langle 7 \rangle$ & $11\cdot\langle 7 \rangle$ \\
+    $3\cdot\langle 7 \rangle$ & $3\cdot\langle 7 \rangle$ & $9\cdot\langle 7 \rangle$ & $11\cdot\langle 7 \rangle$ & $1\cdot\langle 7 \rangle$ \\
+    $9\cdot\langle 7 \rangle$ & $9\cdot\langle 7 \rangle$ & $11\cdot\langle 7 \rangle$ & $1\cdot\langle 7 \rangle$ & $3\cdot\langle 7 \rangle$ \\
+    $11\cdot\langle 7 \rangle$ & $11\cdot\langle 7 \rangle$ & $1\cdot\langle 7 \rangle$ & $3\cdot\langle 7 \rangle$ & $9\cdot\langle 7 \rangle$ \\
+    \end{tabular}
+    Where $U(16)=\{1,3,5,7,9,11,13,15\}$, $\langle 7 \rangle=\{1,7\}$ \\
+    $1\langle 7 \rangle=\{1,7\}$ \\
+    $3\langle 7 \rangle=\{3,5\}$ \\
+    $9\langle 7 \rangle=\{9,15\}$ \\
+    $11\langle 7 \rangle=\{11,13\}$ \\
+    \item \begin{enumerate} \item Let $G$ be a group with $H$ a normal subgroup and both $H$ and $\frac{G}{H}$ are abelian and $\frac{G}{H}$ is cyclic.  Does this imply that $G$ is cyclic?
+    \item Let $G$ be a group with $H$ a normal subgroup and both $H$ and $\frac{G}{H}$ are abelian. Does this imply that $G$ is abelian?
+    \end{enumerate}
+    For both a and b let $G=S_3$, $H=A_3$ then as described in question 5 both $H$ and $\frac{G}{H}$ have prime order so are cyclic and therefore abelian, although $G$ was shown to not be abelian and therefore cannot be cyclic.  So the answer to both a and b is no.
+\end{enumerate}
+
+\end{document}
